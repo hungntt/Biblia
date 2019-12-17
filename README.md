@@ -1,5 +1,5 @@
-# README
-
-CHAPTER 4:
-* Add a full-title helper for application_helper.rb
-* Change the test module
+# CHAPTER 5
+* Add stylesheet sass for all pages (home, help, contact, signup)
+* Separate the partition of pages (head, header, footer)
+* Create the test module for corresponding pages
+* Assign paths/routes for each pages
