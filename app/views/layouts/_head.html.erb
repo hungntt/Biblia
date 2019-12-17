@@ -1,0 +1,6 @@
+<title><%= full_title(yield(:title)) %></title>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all',
+                           'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag '/app/javascript/packs/application.js', 'data-turbolinks-track': 'reload' %>
+<%= render "layouts/shim" %>
