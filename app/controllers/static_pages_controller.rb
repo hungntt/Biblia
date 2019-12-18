@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    flash[:danger] = 'xxx'
   end
 
   def help
