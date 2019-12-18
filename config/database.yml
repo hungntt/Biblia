@@ -50,4 +50,4 @@ production:
   <<: *default
   database: biblia_production
   username: root
-  password: <%= ENV['BOOKMANAGEMENT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['BIBLIA_DATABASE_PASSWORD'] %>
