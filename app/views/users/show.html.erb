@@ -1,0 +1,18 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <span class="avatar"><%= gravatar_for @user %></span>
+      <span class="info_box">
+        <h1><%= @user.name %></h1>
+        <h2>
+          <p>Email: <%= @user.email %><br/>
+          Created at: <%= @user.created_at %><br/>
+          Last update at: <%= @user.updated_at %></p>
+        </h2>
+      </span>
+    </section>
+  </aside>
+</div>
+<%= debug(params) if Rails.env.development? %>
+
