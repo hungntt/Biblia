@@ -13,3 +13,11 @@
 * Create sign-up pages, sign-up error messages,  and its functions
 * Create test cases corresponding to new requirements, mostly the sign-up authentications.
 * Set up production webserver 
+
+# CHAPTER 8
+* Setup missing requirements
+** Import javascript
+** Import missing gem
+* Create login, logout functions
+* Create test cases corresponding to new requirements, mostly the log-in/logout authentications.
+* Try to debug with pry gem
