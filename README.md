@@ -13,5 +13,3 @@
 * Create sign-up pages, sign-up error messages,  and its functions
 * Create test cases corresponding to new requirements, mostly the sign-up authentications.
 * Set up production webserver 
-
-
