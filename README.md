@@ -8,3 +8,8 @@
 * Create the database for Users on mysql2
 * Set constraints for Users model (name, email, password (hash))
 * Create test cases corresponding to new requirements, mostly the users' model authentications.
+
+# CHAPTER 7
+* Create sign-up pages, sign-up error messages,  and its functions
+* Create test cases corresponding to new requirements, mostly the sign-up authentications.
+* Set up production webserver 
