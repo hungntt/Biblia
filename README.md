@@ -16,8 +16,8 @@
 
 # CHAPTER 8
 * Setup missing requirements
-    * Import javascript
-    * Import missing gem
+    * Import javascript related gems
+    * Import missing gems
 * Create login, logout functions
 * Create test cases corresponding to new requirements, mostly the log-in/logout authentications.
 * Try to debug with pry gem
