@@ -58,4 +58,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gem for digest passwords
-gem "bcrypt", '>=  3.1.12'
+gem "bcrypt", ">=  3.1.12"
+
+gem "jquery-rails", ">= 4.3.1"
+gem "coffee-rails", ">= 4.2.2"
+gem "uglifier",     ">=3.2.0"
+gem "pry"
