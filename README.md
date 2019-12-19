@@ -21,3 +21,9 @@
 * Create login, logout functions
 * Create test cases corresponding to new requirements, mostly the log-in/logout authentications.
 * Try to debug with pry gem
+
+# CHAPTER 9
+* Associate to each user a remember token and a corresponding remember digest for use in persistent sessions.
+* Create remember_me checkbox to allow users to save the sessions or not. 
+    * Login status is determined by the presence of a current user based on the temporary session’s user id or the permanent session’s unique remember token.
+* Create integration tests which can verify correct routes, database updates, and proper changes to the layout.
