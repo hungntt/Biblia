@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    find_user_id
   end
 
   def create
@@ -27,11 +27,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    find_user_id
   end
 
   def update
-    @user = User.find(params[:id])
+    find_user_id
     if @user.update(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -48,9 +48,12 @@ class UsersController < ApplicationController
 
   private
 
+  def find_user_id
+    @user = User.find(params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   # Before filter
