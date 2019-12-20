@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   before_action :admin_user, only: %i[destroy]
 
 
-
   def new
     @user = User.new
   end
