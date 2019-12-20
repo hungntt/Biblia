@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index edit update destroy]
+  before_action :load_user, except: %i[new index]
+  before_action :logged_in_user, except: %i[new show create]
   before_action :correct_user, only: %i[edit update]
   before_action :admin_user, only: %i[destroy]
+
+
 
   def new
     @user = User.new
@@ -12,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    find_user_id
   end
 
   def create
@@ -27,11 +29,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    find_user_id
   end
 
   def update
-    find_user_id
     if @user.update(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -41,14 +41,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
 
   private
 
-  def find_user_id
+  def load_user
     @user = User.find(params[:id])
   end
 
