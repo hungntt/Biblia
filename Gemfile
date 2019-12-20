@@ -59,8 +59,11 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gem for digest passwords
 gem "bcrypt", ">=  3.1.12"
-
 gem "jquery-rails", ">= 4.3.1"
 gem "coffee-rails", ">= 4.2.2"
-gem "uglifier",     ">=3.2.0"
+gem "uglifier", ">=3.2.0"
 gem "pry"
+gem "faker", ">=1.7.3"
+# consistent "will_paginate" gem version without error wrong argument
+gem "will_paginate", "3.1.7"
+gem "bootstrap-will_paginate"
