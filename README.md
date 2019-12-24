@@ -37,3 +37,9 @@
 * The users index page shows all users, 30 users per page.
 * Admins can delete users through the web by clicking on delete links that issue DELETE requests to the Users controller ```destroy``` action.
 * Use the standard file ```db/seeds.rb``` to seed the database with sample data using ```rails db:seed```.
+
+# CHAPTER 11
+* Create the activation account function which users are required to activate before using their accounts.
+    * Add ```activation_digest``` and ```activated``` to the users table
+    * The link to activate account consists of the ```activation_digest``` and the email in ASCII. 
+* Alter the integration tests to adapt new requirements for sign up and log in.
