@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
+
+  scope :active, -> { where activated: true }
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true,
@@ -10,12 +13,14 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  before_save { email.downcase! }
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   has_secure_password
 
   class << self
-    # Returns the hash digest of the given string.
+
+    # Returns the hash digest of the given string
     def digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
@@ -27,6 +32,16 @@ class User < ApplicationRecord
     end
   end
 
+  # Activates an account
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  # Sends activation email
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   # Remembers a user in the database for use in persistent sessions.
   def remember
     self.remember_token = self.class.new_token
@@ -34,13 +49,25 @@ class User < ApplicationRecord
   end
 
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  private
+
+  def create_activation_digest
+    self.activation_token = self.class.new_token
+    self.activation_digest = self.class.digest(activation_token)
+  end
+
+  def downcase_email
+    email.downcase!
   end
 end
