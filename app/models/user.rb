@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   # Activates an account
   def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
+    update_columns(activated: true, activated_at: Time.current)
   end
 
   # Sends activation email
@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   def create_reset_digest
     self.reset_token = self.class.new_token
-    update_columns(reset_digest: self.class.digest(reset_token), reset_sent_at: Time.zone.now)
+    update_columns(reset_digest: self.class.digest(reset_token), reset_sent_at: Time.current)
   end
 
   def send_password_reset_email
