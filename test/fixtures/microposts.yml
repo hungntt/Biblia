@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nagisa:
+  content: "You shouldn’t stop like that. If you can move forward, then you should."
+  created_at: <%= 10.minutes.ago %>
+
+kotomi:
+  content: "The day before yesterday, I saw a rabbit. Yesterday, it was a deer. And today, It’s you."
+  created_at: <%= 2.months.ago %>
+
+tomoyo:
+  content: "Time and titles do not matter in the bonds between people."
+  created_at: <%= 1.day.ago %>
+
+most_recent:
+  content: "This is the latest micropost."
+  created_at: <%= Time.current %>
+
+akio:
+  content: "If you really are a man, you should grab the girl you love and run."
+  created_at: <%= 15.seconds.ago %>
