@@ -43,3 +43,9 @@
     * Add ```activation_digest``` and ```activated``` to the users table
     * The link to activate account consists of the ```activation_digest``` and the email in ASCII. 
 * Alter the integration tests to adapt new requirements for sign up and log in.
+
+# CHAPTER 12
+* Create the reset password function for users.
+    * Add ```reset_digest```  and ```reset_sent_at``` to the users table
+    * Create a ```reset_token``` which is valid in a specific span of time by checking the ```reset_sent_at```
+* Create the integration tests to examine the reset password function
