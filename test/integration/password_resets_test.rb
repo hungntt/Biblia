@@ -36,7 +36,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     user.toggle!(:activated)
 
     # Right email, wrong token
-    get edit_password_reset_url('wrong token', email: user.email)
+    get edit_password_reset_url("wrong token", email: user.email)
     assert_redirected_to root_url
 
     # Right email, right token
