@@ -3,7 +3,7 @@
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content"><%= micropost.content %></span>
   <span class="timestamp">
-    <%= post_timestamp(yield(:micropost.created_at)) %>
+    <%= post_timestamp(micropost.created_at) %>
   </span>
 </li>
 
