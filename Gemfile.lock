@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/kristianmandrup/world-flags.git
-  revision: 17043cb3acd7f2d44696b45acc2b7bd50efc0d4b
-  branch: master
-  specs:
-    world-flags (0.6.5)
-      hashie (>= 1.2)
-      i18n (>= 0.6)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -286,7 +277,6 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
-    hashie (4.0.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -503,7 +493,6 @@ DEPENDENCIES
   webdrivers
   webpacker (= 4.0.7)
   will_paginate (= 3.1.7)
-  world-flags!
 
 RUBY VERSION
    ruby 2.6.5p114

@@ -70,4 +70,3 @@ gem "mini_magick", "~> 4.7.0"
 # consistent "will_paginate" gem version without error wrong argument
 gem "will_paginate", "3.1.7"
 gem "bootstrap-will_paginate"
-gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'
