@@ -1,10 +1,12 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-6">
+  <aside class="col-md-11">
     <section class="user_info">
-      <span class="avatar"><%= gravatar_for @user %></span>
+      <span class="avatar"><%= gravatar_for(@user) %></span>
       <span class="info_box">
-        <h1><%= @user.name %></h1>
+        <h1>
+            <%= @user.name %>
+        </h1>
         <h2>
           <p>Email: <%= @user.email %><br/>
           Created at: <%= @user.created_at %><br/>
@@ -13,6 +15,14 @@
       </span>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>
 <%= debug(params) if Rails.env.development? %>
-
