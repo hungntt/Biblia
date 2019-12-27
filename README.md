@@ -49,3 +49,9 @@
     * Add ```reset_digest```  and ```reset_sent_at``` to the users table
     * Create a ```reset_token``` which is valid in a specific span of time by checking the ```reset_sent_at```
 * Create the integration tests to examine the reset password function
+
+# CHAPTER 13
+* Create Micropost model and associate it to User model
+* Create functions for users to handle microposts: ```create```, ```destroy```
+* Use ```where``` method to perform Active Record selections in order to get risk of SQL injection. 
+* Upload and resize uploaded images with CarrierWave

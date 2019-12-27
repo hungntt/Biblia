@@ -61,6 +61,11 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  # Defines a newfeed
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   class << self
 
     # Returns the hash digest of the given string
