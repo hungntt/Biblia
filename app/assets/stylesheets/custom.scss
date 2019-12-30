@@ -79,7 +79,9 @@ p {
 }
 
 /* header */
-
+.nav {
+  color: white !important;
+}
 #logo {
   float: left;
   margin-right: 10px;
@@ -87,13 +89,8 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding: 5px;
   font-weight: bold;
-
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
 }
 
 /* Footer */
@@ -130,9 +127,9 @@ footer {
 /* sidebar */
 
 aside {
-  background-color: #f6f6f6;
-  border: solid 1px #dcdcdc;
+  border: dashed 1px #dcdcdc;
   border-radius: 10px;
+  margin-bottom: 10px;
 
   section.user_info {
     margin-top: 20px;
@@ -159,11 +156,11 @@ aside {
 
     h1 {
       font-size: 1.4em;
-
       font-weight: bold;
       text-align: left;
       margin: 0;
       letter-spacing: 1px;
+      padding-bottom: 5px;
     }
 
     h2 {
@@ -186,6 +183,45 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 7px 0 0 0;
+
+  a {
+    float: left;
+    padding: 0 15px;
+    color: gray;
+
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+
+  .gravatar {
+    margin: 1px 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }
 
 /* forms */
@@ -295,8 +331,34 @@ aside {
 
 span.picture {
   margin-top: 10px;
+
   input {
     border: 0;
   }
 }
 
+/* Button */
+.btn {
+  font-weight:bold;
+  border-radius: 15px
+}
+
+.btn-file {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  color: pink;
+  cursor: inherit;
+  display: block;
+}

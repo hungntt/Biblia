@@ -55,3 +55,12 @@
 * Create functions for users to handle microposts: ```create```, ```destroy```
 * Use ```where``` method to perform Active Record selections in order to get risk of SQL injection. 
 * Upload and resize uploaded images with CarrierWave
+
+# CHAPTER 14
+* Create "Following users" function
+    * Create a Relationship model which connect to User model itself in the many:many relationship
+* Use AJAX to gracefully load the page after follow/unfollow other users
+* Improve the new feed which loads posts from other following users
+* Improve the stylesheet and javascript to handle some advanced functions
+* Create the integration tests to examine all implemented functions
+* Wrap all chapters

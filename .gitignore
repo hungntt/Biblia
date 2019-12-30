@@ -38,3 +38,4 @@ yarn-debug.log*
 /spring/*.pid
 .idea/*
 public/uploads/
+app/assets/images
