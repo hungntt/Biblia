@@ -1,3 +1,5 @@
+This repo is based on the learning book: https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/rails_flavored_ruby
+
 # CHAPTER 5
 * Add stylesheet sass for all pages (home, help, contact, signup)
 * Separate the partition of pages (head, header, footer)
